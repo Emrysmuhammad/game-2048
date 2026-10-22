@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <title>2048</title>
+  <meta name="description" content="Slide and merge numbered tiles to reach 2048. Swipe or use the arrow keys.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tiles.css">
+</head>
+<body>
+  <main class="game">
+
+    <header class="top">
+      <div class="brand">
+        <h1 class="title">2048</h1>
+        <p class="tagline">Join the tiles and reach <strong>2048</strong>!</p>
+      </div>
+
+      <div class="scores">
+        <div id="score-box" class="score-box">
+          <span class="score-label">Score</span>
+          <span id="score" class="score-value">0</span>
+        </div>
+        <div class="score-box">
+          <span class="score-label">Best</span>
+          <span id="best" class="score-value">0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="actions">
+      <p class="hint">
+        Use the <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8594;</kbd><kbd>&#8595;</kbd> keys or swipe.
+        When two tiles with the same number touch, they <strong>merge</strong>!
+      </p>
+      <div class="buttons">
+        <button id="undo-btn" class="btn" type="button" disabled>&#8630; Undo</button>
+        <button id="new-btn" class="btn btn--primary" type="button">New game</button>
+      </div>
+    </div>
+
+    <section id="board" class="board" role="group" aria-label="2048 board">
+      <div id="grid-bg" class="grid-bg" aria-hidden="true"></div>
+      <div id="tiles" class="tiles" aria-hidden="true"></div>
+
+      <div id="overlay" class="overlay" role="dialog" aria-labelledby="overlay-title" hidden>
+        <h2 id="overlay-title" class="overlay__title"></h2>
+        <p id="overlay-text" class="overlay__text"></p>
+        <div class="overlay__buttons">
+          <button id="overlay-keep" class="btn" type="button">Keep going</button>
+          <button id="overlay-retry" class="btn btn--primary" type="button">Try again</button>
+        </div>
+      </div>
+    </section>
+
+    <p class="help">
+      <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> also work &middot; <kbd>U</kbd> undoes your last move
+    </p>
+
+    <p id="live" class="sr-only" aria-live="polite"></p>
+  </main>
+
+  <noscript>
+    <p style="text-align:center;color:#fff">This game needs JavaScript to run.</p>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
