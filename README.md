@@ -340,4 +340,4 @@ Contributions are welcome.
 
 ## License
 
-This project does not include a license file. Unless the author adds one, all rights are reserved.
+This project does not include a license file, all rights are reserved.
